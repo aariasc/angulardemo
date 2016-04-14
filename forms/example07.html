@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS Examples</title>
+    <link href="../shared/bootstrap.min.css" rel="stylesheet">
+    <script src="../shared/angular.min.js"></script>
+  </head>
+  <body ng-app="MyApp">
+    <div class="container" ng-controller="myController">
+
+      <h1>Example #7 - Dropdowns</h1>
+
+      <form name="myForm">
+        <select ng-model="selectedData">
+          <option value="">Select Something</option>
+          <option ng-repeat="x in mydata" value="{{x.field2}}">{{x.field1}}</option>
+        </select>
+      </form>
+
+      <p>Value: <strong>{{selectedData}}</strong></p>
+    </div>
+  </body>
+  <script>
+    var app = angular.module('MyApp', []);
+    app.controller('myController', function($scope){
+      $scope.mydata = [
+        {field1:'First', field2:1},
+        {field1:'Second', field2:2}]
+
+    });
+
+  </script>
+</html>

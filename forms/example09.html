@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS Examples</title>
+    <link href="../shared/bootstrap.min.css" rel="stylesheet">
+    <script src="../shared/angular.min.js"></script>
+  </head>
+  <body ng-app>
+    <div class="container">
+
+      <h1>Example #9 - Show and Hide</h1>
+
+      Select your topic of interest:
+      <select ng-model="myTopic">
+        <option value="">
+        <option value="javascript">Javascript
+        <option value="php">PHP
+        <option value="html5">HTML5
+      </select>
+
+      <div ng-switch="myTopic">
+        <div ng-switch-when="javascript">
+           <h1>Javascript</h1>
+           <p>AngularJS, Knockout, JQuery and stuff.</p>
+        </div>
+        <div ng-switch-when="php">
+           <h1>PHP</h1>
+           <p>PHP, CodeIgniter, etc.</p>
+        </div>
+        <div ng-switch-when="html5">
+           <h1>HTML5</h1>
+           <p>HTML5 and CSS3 for you.</p>
+        </div>
+        <div ng-switch-default>
+          waiting...
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
